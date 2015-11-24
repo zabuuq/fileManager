@@ -1,0 +1,8 @@
+.file-manager-delete {
+	cursor: pointer;
+	padding: 0 15px;
+}
+
+.file-manager-name a {
+	display: block;
+}

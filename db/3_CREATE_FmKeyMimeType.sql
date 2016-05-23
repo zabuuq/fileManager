@@ -1,0 +1,44 @@
+BEGIN TRANSACTION
+GO
+
+IF EXISTS (
+	SELECT	*
+	FROM	sys.objects
+	WHERE	object_id = OBJECT_ID(N'dbo.FmKeyMimeType')
+	AND		TYPE IN (N'U')
+)
+BEGIN
+	DROP TABLE dbo.FmKeyMimeType;
+END
+GO
+
+CREATE TABLE dbo.FmKeyMimeType(
+	fmKeyId			INT	NOT NULL
+	,fmMimeTypeId	INT	NOT NULL
+	,PRIMARY KEY CLUSTERED (
+		fmKeyId ASC
+		,fmMimeTypeId ASC
+	)
+	WITH (
+		PAD_INDEX = OFF
+		,STATISTICS_NORECOMPUTE = OFF
+		,IGNORE_DUP_KEY = OFF
+		,ALLOW_ROW_LOCKS = ON
+		,ALLOW_PAGE_LOCKS = ON
+	) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE dbo.FmKeyMimeType 
+WITH CHECK 
+ADD FOREIGN KEY(fmKeyId)
+REFERENCES dbo.FileManagerKey (fmKeyId)
+GO
+
+ALTER TABLE dbo.FmKeyMimeType 
+WITH CHECK 
+ADD FOREIGN KEY(fmMimeTypeId)
+REFERENCES dbo.FmLkupMimeType (fmMimeTypeId)
+GO
+
+COMMIT

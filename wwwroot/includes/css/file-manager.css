@@ -1,0 +1,37 @@
+body {
+	background-color: #ddd;
+}
+
+header .container {
+	background-color: #700;
+	border-bottom: 1px solid #555;
+	color: #fff;
+	font-size: 2.5em;
+	padding: 15px;
+}
+
+.container.main-body {
+	background-color: #eee;
+	min-height: 500px;
+	padding: 15px;
+}
+
+/*
+.file-manager-delete {
+	cursor: pointer;
+	padding: 0 15px;
+}
+
+.file-manager-name a {
+	display: block;
+}
+*/
+
+footer .container {
+	background-color: #700;
+	border-top: 1px solid #555;
+	color: #fff;
+	font-size: .9em;
+	padding: 10px 15px;
+	text-align: center;
+}

@@ -1,54 +1,10 @@
-<cfset local.hideDebug = (structKeyExists(url, "hideDebug") ) ? local.hideDebug : false />
 
-<html lang="en">
-<head>
-	<cfif local.hideDebug>
-		<cfsetting showdebugoutput="false" />
-	</cfif>
-	
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<cfsavecontent variable="request.bodyContent">
+	<div class="jumbotron">
+		<p>Click the FILE MANAGER link above to see a simple example the file manager at work.  On the front end it utilizes the jQuery blueimp file upload widget (git: <a href="https://github.com/blueimp/jQuery-File-Upload">https://github.com/blueimp/jQuery-File-Upload</a>) (demo: <a href="https://blueimp.github.io/jQuery-File-Upload/">https://blueimp.github.io/jQuery-File-Upload/</a>). In the example you can upload, view and delete files.</p>
 
-	<title>File Manager Sample</title>
-
-	<meta name="description" content="File Manager Sample">
-	<meta name="author" content="Jason C McCoy (zabuuq)">
-
-	<!---css --->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="includes/css/file-manager.css">
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
-
-<body data-spy="scroll">
-	<header>
-		<div class="container">
-			File Manager Sample
-		</div>
-	</header>
-
-	<div class="container main-body">
-		HELLO WORLD!
+		<p>Click the ADMIN link above to manipulate the database back-end of the file manager. You will be able to see a list of the file manager 'keys' and will be able to define what mime types are accepted for each 'key.' For the purposes of this sample, only one 'key' is available to be manipulated. Updating its mime types will affect the FILE MANAGER page.
 	</div>
+</cfsavecontent>
 
-	<footer>
-		<div class="container">
-			<div>File Manager Sample</div>
-		</div>
-	</footer>
-
-	<!---js --->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
-</html>
+<cfinclude template="example/layout.cfm" />

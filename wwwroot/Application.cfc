@@ -23,13 +23,4 @@ component{
 	public boolean function onApplicationStart(){
 		return true;
 	}
-
-	// Session start
-	public void function onSessionStart(){
-	}
-
-	// Request start
-	public boolean function onRequestStart(String targetPage){
-		return true;
-	}
 }

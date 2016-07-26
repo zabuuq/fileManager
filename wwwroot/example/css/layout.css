@@ -15,8 +15,8 @@ header .container {
 }
 
 nav {
-	max-width: 1170px;
 	margin: 0 auto !important;
+	max-width: 1170px;
 }
 
 .container.main-body {

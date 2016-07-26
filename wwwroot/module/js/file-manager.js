@@ -1,5 +1,11 @@
-// Define file manager directory and files.
-fileManagerDirectory = "/modules/fileManager/";
+/**
+* Define file manager directory and files.
+* 
+* @NOTE
+* In order for the AJAX calls to work, the variable fileManagerDirectory needs to
+* match the www directory where the File Manager application was placed.
+**/
+fileManagerDirectory = "/module/";
 fileManagerComponent = fileManagerDirectory + "FileManager.cfc"
 fileManagerFileLoad = fileManagerDirectory + "loadFile.cfm"
 

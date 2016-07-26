@@ -1,6 +1,6 @@
 
 <cfsavecontent variable="request.headContent">
-	<link rel="stylesheet" type="text/css" href="/includes/css/file-manager.css">
+	<link rel="stylesheet" type="text/css" href="/css/file-manager.css">
 </cfsavecontent>
 
 <cfsavecontent variable="request.bodyContent">
@@ -44,7 +44,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.4/js/vendor/jquery.ui.widget.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.4/js/jquery.iframe-transport.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.4/js/jquery.fileupload.min.js"></script>
-	<script src="/includes/js/file-manager.js"></script>
+	<script src="/module/js/file-manager.js"></script>
 </cfsavecontent>
 
 <cfinclude template="layout.cfm" />

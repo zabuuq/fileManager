@@ -1,22 +1,17 @@
-component{
+component {
 	// Application properties
 	this.name = hash( getCurrentTemplatePath() );
-	this.sessionManagement = true;
-	this.sessionTimeout = createTimeSpan(0,1,0,0);
-	this.setClientCookies = true;
 	
 	// Enable ORM
 	this.ormEnabled = true;
+
 	// ORM Datasource
 	this.datasource = "FileManager";
+
 	// ORM configuration settings
 	this.ormSettings = {
-		// Location of your entities, default is your convention model folder
-		cfclocation = ["\model\entities"],
-		// Log SQL or not
-		logSQL = true,
-		// Active ORM events
-		eventHandling =  true
+		cfclocation = ["/module/model/entities"]	// Location of entities
+		,eventHandling = true						// Use active ORM events
 	};
 
 	// Application start

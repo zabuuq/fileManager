@@ -33,7 +33,7 @@ function fileManagerList(fileManagerBody, fmKeyId, fmUniqueId, allowDelete){
 	var $fileManagerBody = $(fileManagerBody);
 	var $fmKeyId = $(fmKeyId);
 	var $fmUniqueId = $(fmUniqueId);
-	var allowDelete = (allowDelete == null) ? true : allowDelete;
+	var allowDelete = (typeof allowDelete === "undefined") ? true : allowDelete;
 
 	$fileManagerBody.empty();
 
@@ -49,8 +49,11 @@ function fileManagerList(fileManagerBody, fmKeyId, fmUniqueId, allowDelete){
 		}
 	}).done(function(d){
 		for(x=0; x<d.data.fileList.length; ++x){
+			var attCloneHtml = "<a href='" + fileManagerFileLoad + "?fmUploadId=" 
+				+ d.data.fileList[x].fmUploadId + "'>" + d.data.fileList[x].fmFileName + "</a>";
+
 			$attClone = $fmRow.clone();
-			$attClone.find("td.file-manager-name").html("<a href='" + fileManagerFileLoad + "?fmUploadId=" + d.data.fileList[x].fmUploadId + "'>" + d.data.fileList[x].fmFileName + "</a>");
+			$attClone.find("td.file-manager-name").html(attCloneHtml);
 
 			if(allowDelete){
 				$attClone.find(".file-manager-delete")
@@ -62,6 +65,7 @@ function fileManagerList(fileManagerBody, fmKeyId, fmUniqueId, allowDelete){
 			else {
 				$attClone.find(".file-manager-delete").parent().html("");
 			}
+
 			$fileManagerBody.append($attClone);
 		}
 	});

@@ -32,7 +32,7 @@
 * 	,fmKeyId: 10
 * 	,fmUniqueId: 245
 * }
-*/
+**/
 component output=false {
 	// Grab the root upload path for the server from Config.
 	variables.rootUploadDir = getDirectoryFromPath( getCurrentTemplatePath() ) & "storage";
@@ -64,8 +64,8 @@ component output=false {
 	* @arg	required	any		fileUpload	- The file to be uploaded.
 	* 										(any is used because there is not a proper data 
 	* 										type for "files")
-	* @arg	required	numeric	fmKeyId		- The ID the calling code/application.
-	* @arg	required	string	fmUniqueId	- The unique identifier number.
+	* @arg	required	numeric	fmKeyId		- The ID of the calling code/application.
+	* @arg	required	string	fmUniqueId	- A unique identifier number.
 	* 		The identifier fmUniqueId is required, but if the application does not have separate
 	* 		unique parts that are identified by some sort of ID, then a zero (0) can be passed.
 	* */
@@ -177,8 +177,8 @@ component output=false {
 	* 
 	* See example above for the uploadFile method for an explaination of the uniqueId.
 	* 
-	* @arg	required	string	fmKeyId	- The name the calling code/application name.
-	* @arg	required	string	fmUniqueId	- The unique identifier number.
+	* @arg	required	string	fmKeyId		- The ID of the calling code/application name.
+	* @arg	required	string	fmUniqueId	- A unique identifier number.
 	* */
 	remote struct function getUploadedFiles(required numeric fmKeyId, required string fmUniqueId){
 		// Returns the success, a message, and the ID(s) passed.
@@ -209,8 +209,8 @@ component output=false {
 	* 
 	* See example above for the uploadFile method for an explaination of the uniqueId.
 	* 
-	* @arg	required	string	fmKeyId	- The name the calling code/application name.
-	* @arg	required	string	fmUniqueId	- The unique identifier number.
+	* @arg	required	string	fmKeyId		- The ID of the calling code/application name.
+	* @arg	required	string	fmUniqueId	- A unique identifier number.
 	* */
 	remote struct function getFileUploadInfo(required numeric fmUploadId){
 		// Returns the success, a message, and the ID(s) passed.
@@ -372,9 +372,9 @@ component output=false {
 	* You can move an individual file by passing its fileManagerUploadId or you can move a group
 	* of files with the same unique ID by not passing fileManagerUploadId.
 	*  
-	* @arg	required	string	oldUniqueId	- The current unique ID to move the file from.
+	* @arg	required	string	oldUniqueId		- The current unique ID to move the file from.
 	* @arg	required	string	newUniqueId		- The new unique ID to move the file to.
-	* @arg	required	string	fmKeyId		- The keyName associated with the file(s).
+	* @arg	required	string	fmKeyId			- The keyName associated with the file(s).
 	* @arg	optional	int		fmUploadId		- An individual file's fileManagerUploadId.
 	* */
 	remote struct function changeUniqueId(required string oldUniqueId, required string newUniqueId, required string fmKeyId, numeric fmUploadId){

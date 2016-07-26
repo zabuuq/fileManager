@@ -108,6 +108,8 @@ component output=false {
 				// Initially load the file in the temp directory, then rename and move it to its final directory later.
 				fileUploadStruct = fileUpload(variables.tempUploadDir, "fileUpload", fileUploadExtensions, "MakeUnique");
 
+				var fileExt = (fileUploadStruct.serverFileExt == "") ? fileUploadStruct.clientFileExt : fileUploadStruct.serverFileExt;
+
 				/** 
 				* Add the file to the database and get the fileManagerUploadId.
 				* The ID and the Key Name will be used to rename the file when moving it to its final location. 
@@ -116,14 +118,14 @@ component output=false {
 				var fileManagerUpload = entityNew("FileManagerUpload");
 				fileManagerUpload.setFmUniqueId(arguments.fmUniqueId);
 				fileManagerUpload.setFmFileName(cleanFileName(fileUploadStruct.clientFile) );
-				fileManagerUpload.setFmFileExt(fileUploadStruct.serverFileExt);
+				fileManagerUpload.setFmFileExt(fileExt);
 
 				fileManagerUpload.setFileManagerKey(fileManagerKey);
 
 				entitySave(fileManagerUpload);
 
 				// Move the file from the temp directory to the final directory and rename it.
-				var fileName = fileManagerKey.getFmKeyName() & "_" & fileManagerUpload.getFmUploadId() & "." & fileUploadStruct.serverFileExt;
+				var fileName = fileManagerKey.getFmKeyName() & "_" & fileManagerUpload.getFmUploadId() & "." & fileExt;
 				fileMove(fileUploadStruct.serverDirectory & "\" & fileUploadStruct.serverFile, fileUploadPath & "\" & fileName);
 
 				// Do not place anything after this line that you want the try/catch to catch.

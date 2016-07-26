@@ -44,11 +44,39 @@
 	<nav class="navbar navbar-default">
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<cfoutput>
-					<li><a href="/index.cfm">HOME</a></li>
-					<li><a href="/example/index.cfm">FILE MANAGER</a></li>
-					<li><a href="/example/admin.cfm">ADMIN</a></li>
-				</cfoutput>
+				<li><a href="/example/index.cfm">HOME</a></li>
+				<li><a href="/example/fileManager.cfm">FILE MANAGER DEMO</a></li>
+				<li><a href="/example/admin.cfm">ADMIN</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-link"></span> EXTERNAL LINKS <span class="caret"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li>
+							<a target="_blank" href="https://blueimp.github.io/jQuery-File-Upload/">
+								<span class="glyphicon glyphicon-new-window"></span> BLUEIMP DEMO
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://github.com/blueimp/jQuery-File-Upload">
+								<span class="glyphicon glyphicon-new-window"></span> BLUEIMP GITHUB
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://getbootstrap.com/">
+								<span class="glyphicon glyphicon-new-window"></span> BOOTSTRAP
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://jquery.com/">
+								<span class="glyphicon glyphicon-new-window"></span> JQUERY
+							</a>
+						</li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -66,7 +94,6 @@
 	<!---js --->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	<cfoutput>#request.footContent#</cfoutput>
 </body>
